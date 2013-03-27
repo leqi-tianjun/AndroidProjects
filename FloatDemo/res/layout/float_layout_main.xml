@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <!-- 显示、隐藏的扩展容器 -->
+
+    <LinearLayout
+        android:id="@+id/id_float_ext_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="600dip"
+        android:background="@android:drawable/alert_dark_frame"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/id_btn_ext"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@android:drawable/ic_dialog_dialer"
+        android:text="..."
+        android:textColor="#FF00FF00" />
+
+    <Button
+        android:id="@+id/id_btn_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="exit"
+        android:textColor="#FF0000FF" />
+
+</LinearLayout>
