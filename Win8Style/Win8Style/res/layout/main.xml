@@ -8,15 +8,17 @@
     android:paddingLeft="20dp"
     android:paddingTop="30dp" >
 
- 
-    <android.suport.v4.view.ViewPager
-        android:id="@+id/viewPagerContent"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center" >
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
 
-       
-    </android.suport.v4.view.ViewPager>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPagerContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"

@@ -24,9 +24,10 @@ public class Win8StyleActivity extends Activity {
 		myViewPager=(ViewPager)findViewById(R.id.viewPagerContent);
 		LayoutInflater inflater = LayoutInflater.from(context);
 		View view1 = myViewPager.inflate(context, R.layout.view1, null);
+		View view2 = myViewPager.inflate(context, R.layout.view2, null);
 		final ArrayList<View> listView = new ArrayList<View>();
 		listView.add(view1);
-		
+		listView.add(view2);
 		PagerAdapter adapter = new PagerAdapter(){
 
 			@Override
