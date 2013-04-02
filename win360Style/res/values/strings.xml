@@ -4,5 +4,9 @@
     <string name="app_name">win360Style</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+ <string name="menu_net_update">联网升级</string>
+    <string name="menu_recommand_friend">推荐好友</string>
+    <string name="menu_submit_proposal">问题反馈</string>
+    <string name="menu_help_information">帮助信息</string>
+    <string name="menu_about">关于</string>
 </resources>
