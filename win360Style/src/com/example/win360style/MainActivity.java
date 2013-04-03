@@ -2,7 +2,6 @@ package com.example.win360style;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -17,7 +16,9 @@ import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
 	private Context context=this;
@@ -26,9 +27,9 @@ public class MainActivity extends FragmentActivity {
 	private FrameLayout mMainFrameLayout;
 
 	private boolean mSlided = false;
-	private ImageButton mSettingBtn;
+	private ImageView mSettingBtn;
 
-	private final static int TRANSLATE_ANIMATION_WIDTH = 150;
+	private final static int TRANSLATE_ANIMATION_WIDTH = 120;
 	private final static int ANIMATION_DURATION_FAST = 450;
 	private final static int ANIMATION_DURATION_SLOW = 350;
 	private final static int MOVE_DISTANCE = 50;
@@ -36,6 +37,9 @@ public class MainActivity extends FragmentActivity {
 	// ÆÁÄ»¿í¶È
 	private int mWidth;
 	private float mPositionX;
+	private FrameLayout mMainFrameMaskLayout;
+	private ImageView mSettingNegativeBtn;
+	private PagerAdapter adapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +63,7 @@ public class MainActivity extends FragmentActivity {
 		final ArrayList<View> listView = new ArrayList<View>();
 		listView.add(view1);
 		listView.add(view2);
-		PagerAdapter adapter = new PagerAdapter(){
+		adapter = new PagerAdapter(){
 
 			@Override
 			public int getCount() {
@@ -92,6 +96,7 @@ public class MainActivity extends FragmentActivity {
 		mSettingFrameLayout = (FrameLayout) findViewById(R.id.setting);
 		
 		mMainFrameLayout = (FrameLayout) findViewById(R.id.main);
+		mMainFrameMaskLayout = (FrameLayout) findViewById(R.id.main_page_mask);
 //		mMainFrameLayout.setOnTouchListener(mOnTouchListener);
 		mSettingFrameLayout.setVisibility(View.GONE);
 		TranslateAnimation translate = new TranslateAnimation(0, mWidth, 0, 0);
@@ -114,11 +119,27 @@ public class MainActivity extends FragmentActivity {
 					@Override
 					public void onAnimationEnd(Animation anima) {
 						mSettingFrameLayout.setVisibility(View.VISIBLE);
+						
 					}
 				});
 		
-		mSettingBtn = (ImageButton) findViewById(R.id.setting_btn);
+		mSettingBtn = (ImageView) findViewById(R.id.setting_btn);
 		mSettingBtn.setOnClickListener(mOnClickListener);
+		
+
+		mSettingNegativeBtn = (ImageView) findViewById(R.id.setting_negative_btn);
+		mSettingNegativeBtn.setOnClickListener(mOnClickListener);
+		
+		
+		TextView tv = (TextView) findViewById(R.id.menu_net_udpate);
+		tv.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Toast.makeText(context, "hello", Toast.LENGTH_LONG).show();
+			}
+		});
 	}
 	
 	// µã»÷°´Å¥
@@ -127,6 +148,13 @@ public class MainActivity extends FragmentActivity {
 			public void onClick(View v) {
 				switch (v.getId()) {
 					case R.id.setting_btn :
+						if (mSlided) {
+							slideIn();
+						} else {
+							slideOut();
+						}
+						break;
+					case R.id.setting_negative_btn :
 						if (mSlided) {
 							slideIn();
 						} else {
@@ -162,6 +190,8 @@ public class MainActivity extends FragmentActivity {
 				return false;
 			}
 		};
+		
+		
 
 		/**
 		 * »¬³ö²à±ßÀ¸
@@ -192,6 +222,22 @@ public class MainActivity extends FragmentActivity {
 						@Override
 						public void onAnimationEnd(Animation anima) {
 							mSlided = true;
+//							RelativeLayout.LayoutParams lp=new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT); 
+//							lp.rightMargin = TRANSLATE_ANIMATION_WIDTH; 
+//							//lp.topMargin = top;
+//							int[] pos={mSettingBtn.getLeft(),mSettingBtn.getTop(),mSettingBtn.getRight(),mSettingBtn.getBottom()};
+//							mSettingBtn.setLayoutParams(lp);
+							/*final int left = mSettingBtn.getLeft();
+				            final int top = mSettingBtn.getTop();
+				            final int right = mSettingBtn.getRight();
+				            final int bottom = mSettingBtn.getBottom();
+				            mSettingBtn.layout(left, top , right, bottom);
+				            System.out.println("left: "+(left)+";top:"+ top+";right:"+ (right)+";bottom:"+  bottom);*/
+							
+							mMainFrameMaskLayout.setVisibility(View.VISIBLE);
+							mMainFrameMaskLayout.setOnTouchListener(null);
+							mSettingBtn.setVisibility(View.GONE);
+							myViewPager.setFocusable(false);
 						}
 					});
 		}
@@ -216,6 +262,7 @@ public class MainActivity extends FragmentActivity {
 							mainAnimation.setDuration(ANIMATION_DURATION_SLOW);
 							mainAnimation.setFillAfter(true);
 							mMainFrameLayout.startAnimation(mainAnimation);
+							myViewPager.setAdapter(adapter);
 							
 						}
 
@@ -227,6 +274,11 @@ public class MainActivity extends FragmentActivity {
 						@Override
 						public void onAnimationEnd(Animation animation) {
 							mSlided = false;
+
+							mMainFrameMaskLayout.setVisibility(View.GONE);
+							mMainFrameMaskLayout.setOnTouchListener(null);
+							mSettingBtn.setVisibility(View.VISIBLE);
+							myViewPager.setFocusable(true);
 						}
 					});
 
