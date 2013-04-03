@@ -90,10 +90,33 @@ public class MainActivity extends FragmentActivity {
 
 		mWidth = getResources().getDisplayMetrics().widthPixels;
 		mSettingFrameLayout = (FrameLayout) findViewById(R.id.setting);
+		
 		mMainFrameLayout = (FrameLayout) findViewById(R.id.main);
 //		mMainFrameLayout.setOnTouchListener(mOnTouchListener);
-//		slideIn();
-				
+		mSettingFrameLayout.setVisibility(View.GONE);
+		TranslateAnimation translate = new TranslateAnimation(0, mWidth, 0, 0);
+		translate.setDuration(ANIMATION_DURATION_FAST);
+		// 动画完成时停在结束位置
+		translate.setFillAfter(true);
+		mSettingFrameLayout.startAnimation(translate);
+		mSettingFrameLayout.getAnimation().setAnimationListener(
+				new Animation.AnimationListener() {
+					
+					@Override
+					public void onAnimationStart(Animation anim) {						 
+					}
+
+					@Override
+					public void onAnimationRepeat(Animation animation) {
+
+					}
+
+					@Override
+					public void onAnimationEnd(Animation anima) {
+						mSettingFrameLayout.setVisibility(View.VISIBLE);
+					}
+				});
+		
 		mSettingBtn = (ImageButton) findViewById(R.id.setting_btn);
 		mSettingBtn.setOnClickListener(mOnClickListener);
 	}
@@ -144,16 +167,21 @@ public class MainActivity extends FragmentActivity {
 		 * 滑出侧边栏
 		 */
 		private void slideOut() {
-			TranslateAnimation translate = new TranslateAnimation(mWidth,
-					mWidth-TRANSLATE_ANIMATION_WIDTH, 0, 0);
-			translate.setDuration(ANIMATION_DURATION_SLOW);
-			translate.setFillAfter(true);
-			mSettingFrameLayout.startAnimation(translate);
-			mSettingFrameLayout.getAnimation().setAnimationListener(
+			TranslateAnimation animation = new TranslateAnimation(
+					0, -TRANSLATE_ANIMATION_WIDTH, 0, 0);
+			animation.setDuration(ANIMATION_DURATION_FAST);
+			animation.setFillAfter(true);
+			mMainFrameLayout.startAnimation(animation);			
+			mMainFrameLayout.getAnimation().setAnimationListener(
 					new Animation.AnimationListener() {
 						
 						@Override
 						public void onAnimationStart(Animation anim) {
+							TranslateAnimation translate = new TranslateAnimation(mWidth,
+									mWidth-TRANSLATE_ANIMATION_WIDTH, 0, 0);
+							translate.setDuration(ANIMATION_DURATION_SLOW);
+							translate.setFillAfter(true);
+							mSettingFrameLayout.startAnimation(translate);
 						}
 
 						@Override
@@ -163,33 +191,7 @@ public class MainActivity extends FragmentActivity {
 
 						@Override
 						public void onAnimationEnd(Animation anima) {
-							TranslateAnimation animation = new TranslateAnimation(
-									0, -TRANSLATE_ANIMATION_WIDTH, 0, 0);
-							animation.setDuration(ANIMATION_DURATION_FAST);
-							animation.setFillAfter(true);
-							mMainFrameLayout.startAnimation(animation);
-							mMainFrameLayout.getAnimation().setAnimationListener(new Animation.AnimationListener() {
-								
-								@Override
-								public void onAnimationStart(Animation animation) {
-									// TODO Auto-generated method stub
-									
-								}
-								
-								@Override
-								public void onAnimationRepeat(Animation animation) {
-									// TODO Auto-generated method stub
-									
-								}
-								
-								@Override
-								public void onAnimationEnd(Animation animation) {
-									mSettingFrameLayout.setVisibility(View.VISIBLE);
-									
-								}
-							});
 							mSlided = true;
-//							mSettingFrameLayout.setVisibility(View.VISIBLE);
 						}
 					});
 		}
