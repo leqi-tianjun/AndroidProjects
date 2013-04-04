@@ -79,6 +79,16 @@
                         android:layout_height="36dp"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/rootblock_icon_add_bg" />
+                    <TextView
+                        android:id="@+id/pageNo"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@android:color/white"
+                        android:text="1 / 2" android:gravity="center" 
+                        android:background="@drawable/main_bg_normal_bg"/>
+                    
                 </LinearLayout>
             </RelativeLayout>
         </FrameLayout>

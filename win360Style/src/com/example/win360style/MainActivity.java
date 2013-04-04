@@ -89,9 +89,30 @@ public class MainActivity extends FragmentActivity {
 				return   listView.get(position);
 
 			 }
-		};
+		};	
 		myViewPager.setAdapter(adapter);
-
+		final TextView pageNoTv = (TextView) findViewById(R.id.pageNo);
+		myViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {  
+            @Override  
+            public void onPageSelected(int arg0) {  
+            	if(arg0==0){
+            		pageNoTv.setText("1 / 2");
+            	}else{
+            		pageNoTv.setText("2 / 2");
+            	}
+   
+            }  @Override  
+            public void onPageScrolled(int arg0, float arg1, int arg2) {  
+  
+            }  
+  
+            @Override  
+            public void onPageScrollStateChanged(int arg0) {  
+  
+            }  
+        });  
+            
+            
 		mWidth = getResources().getDisplayMetrics().widthPixels;
 		mSettingFrameLayout = (FrameLayout) findViewById(R.id.setting);
 		
@@ -141,6 +162,7 @@ public class MainActivity extends FragmentActivity {
 			}
 		});
 	}
+	
 	
 	// µã»÷°´Å¥
 		private OnClickListener mOnClickListener = new OnClickListener() {
