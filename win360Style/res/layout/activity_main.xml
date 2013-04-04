@@ -113,7 +113,7 @@
         android:id="@+id/setting"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" 
-        android:background="@android:color/white"
+        android:background="@drawable/black_bg_repeat"
         android:layout_gravity="right">
 
         <LinearLayout
@@ -135,6 +135,7 @@
 
                     <TextView
                         android:id="@+id/menu_net_udpate"
+                        android:textColor="@android:color/white"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8.0dip"
@@ -149,6 +150,7 @@
 
                     <TextView
                         android:id="@+id/menu_recommand_friend"
+                        android:textColor="@android:color/white"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8.0dip"
@@ -164,6 +166,7 @@
 
                     <TextView
                         android:id="@+id/menu_submit_proposal"
+                        android:textColor="@android:color/white"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8.0dip"
@@ -179,6 +182,7 @@
 
                     <TextView
                         android:id="@+id/menu_help_information"
+                        android:textColor="@android:color/white"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8.0dip"
@@ -194,6 +198,7 @@
 
                     <TextView
                         android:id="@+id/main_about"
+                        android:textColor="@android:color/white"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8.0dip"
@@ -209,6 +214,7 @@
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
+        <LinearLayout android:background="@drawable/black_bg_shadow_repeat" android:layout_width="28.0dip" android:layout_height="fill_parent" />
     </FrameLayout>
 
 </FrameLayout>
