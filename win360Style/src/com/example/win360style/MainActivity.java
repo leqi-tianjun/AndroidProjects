@@ -29,7 +29,7 @@ public class MainActivity extends FragmentActivity {
 	private boolean mSlided = false;
 	private ImageView mSettingBtn;
 
-	private final static int TRANSLATE_ANIMATION_WIDTH = 120;
+	private final static int TRANSLATE_ANIMATION_WIDTH = 140;
 	private final static int ANIMATION_DURATION_FAST = 450;
 	private final static int ANIMATION_DURATION_SLOW = 350;
 	private final static int MOVE_DISTANCE = 50;
@@ -99,7 +99,7 @@ public class MainActivity extends FragmentActivity {
 		mMainFrameMaskLayout = (FrameLayout) findViewById(R.id.main_page_mask);
 //		mMainFrameLayout.setOnTouchListener(mOnTouchListener);
 		mSettingFrameLayout.setVisibility(View.GONE);
-		TranslateAnimation translate = new TranslateAnimation(0, mWidth, 0, 0);
+		TranslateAnimation translate = new TranslateAnimation(0, TRANSLATE_ANIMATION_WIDTH, 0, 0);
 		translate.setDuration(ANIMATION_DURATION_FAST);
 		// 动画完成时停在结束位置
 		translate.setFillAfter(true);
@@ -169,7 +169,7 @@ public class MainActivity extends FragmentActivity {
 		private OnTouchListener mOnTouchListener = new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				if (v.getId() == R.id.main) {
+				if (v.getId() == R.id.main_page_mask) {
 					int action = event.getAction();
 					switch (action) {
 						case MotionEvent.ACTION_DOWN :
@@ -207,8 +207,8 @@ public class MainActivity extends FragmentActivity {
 						
 						@Override
 						public void onAnimationStart(Animation anim) {
-							TranslateAnimation translate = new TranslateAnimation(mWidth,
-									mWidth-TRANSLATE_ANIMATION_WIDTH, 0, 0);
+							TranslateAnimation translate = new TranslateAnimation(TRANSLATE_ANIMATION_WIDTH,
+									0, 0, 0);
 							translate.setDuration(ANIMATION_DURATION_SLOW);
 							translate.setFillAfter(true);
 							mSettingFrameLayout.startAnimation(translate);
@@ -235,7 +235,7 @@ public class MainActivity extends FragmentActivity {
 				            System.out.println("left: "+(left)+";top:"+ top+";right:"+ (right)+";bottom:"+  bottom);*/
 							
 							mMainFrameMaskLayout.setVisibility(View.VISIBLE);
-							mMainFrameMaskLayout.setOnTouchListener(null);
+							mMainFrameMaskLayout.setOnTouchListener(mOnTouchListener);
 							mSettingBtn.setVisibility(View.GONE);
 							myViewPager.setFocusable(false);
 						}
@@ -246,7 +246,7 @@ public class MainActivity extends FragmentActivity {
 		 * 滑进侧边栏
 		 */
 		private void slideIn() {
-			TranslateAnimation translate = new TranslateAnimation(mWidth-TRANSLATE_ANIMATION_WIDTH, mWidth, 0, 0);
+			TranslateAnimation translate = new TranslateAnimation(0, TRANSLATE_ANIMATION_WIDTH, 0, 0);
 			translate.setDuration(ANIMATION_DURATION_FAST);
 			// 动画完成时停在结束位置
 			translate.setFillAfter(true);

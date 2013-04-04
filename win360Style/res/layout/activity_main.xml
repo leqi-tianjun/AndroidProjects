@@ -113,7 +113,8 @@
         android:id="@+id/setting"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" 
-        android:background="@android:color/white">
+        android:background="@android:color/white"
+        android:layout_gravity="right">
 
         <LinearLayout
             android:id="@+id/right_menu"
@@ -143,7 +144,8 @@
                         android:paddingBottom="3.0dip"
                         android:paddingTop="3.0dip"
                         android:text="@string/menu_net_update"
-                        android:textSize="14.0sp" />
+                        android:textSize="14.0sp"
+                        android:background="@drawable/selector_menu_btn" />
 
                     <TextView
                         android:id="@+id/menu_recommand_friend"
@@ -157,7 +159,8 @@
                         android:paddingBottom="3.0dip"
                         android:paddingTop="3.0dip"
                         android:text="@string/menu_recommand_friend"
-                        android:textSize="14.0sp" />
+                        android:textSize="14.0sp"
+                        android:background="@drawable/selector_menu_btn" />
 
                     <TextView
                         android:id="@+id/menu_submit_proposal"
