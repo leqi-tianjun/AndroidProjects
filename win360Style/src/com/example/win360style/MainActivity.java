@@ -259,7 +259,6 @@ public class MainActivity extends FragmentActivity {
 							mMainFrameMaskLayout.setVisibility(View.VISIBLE);
 							mMainFrameMaskLayout.setOnTouchListener(mOnTouchListener);
 							mSettingBtn.setVisibility(View.GONE);
-							myViewPager.setFocusable(false);
 						}
 					});
 		}
@@ -284,7 +283,6 @@ public class MainActivity extends FragmentActivity {
 							mainAnimation.setDuration(ANIMATION_DURATION_SLOW);
 							mainAnimation.setFillAfter(true);
 							mMainFrameLayout.startAnimation(mainAnimation);
-							myViewPager.setAdapter(adapter);
 							
 						}
 
