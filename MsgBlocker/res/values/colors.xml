@@ -7,4 +7,5 @@
     
     <color name="tab_selected">#00C5FF</color>
     <color name="tab_normal">#EAEAEA</color>
+    <color name="transparent_bg">#99000000</color>
 </resources>

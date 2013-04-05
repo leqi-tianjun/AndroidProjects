@@ -11,7 +11,8 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name">
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar">
         <activity
             android:name="com.myandroid.msgblocker.MainActivity"
             android:label="@string/app_name" >
@@ -22,13 +23,77 @@
             </intent-filter>
         </activity>
         
-        
-        <activity android:name=".FragmentTabActivity" android:label="@string/fragment_activity">
+        <activity android:name="MsgBlockActivity" android:label="@string/function_msg_block">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.MSGBLOCKER"/>
+                <category android:name="android.intent.category.FUNCTION"/>
             </intent-filter>
         </activity>
+        
+        <activity android:name="Function1Activity" android:label="@string/function_1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.FUNCTION"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="Function2Activity" android:label="@string/function_2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.FUNCTION"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="Function3Activity" android:label="@string/function_3">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.FUNCTION"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="Function4Activity" android:label="@string/function_4">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.FUNCTION"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="Function5Activity" android:label="@string/function_5">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.FUNCTION"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="Function6Activity" android:label="@string/function_6">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.FUNCTION"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="Function7Activity" android:label="@string/function_7">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.FUNCTION"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="Function8Activity" android:label="@string/function_8">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.FUNCTION"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="Function9Activity" android:label="@string/function_9">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.FUNCTION"/>
+            </intent-filter>
+        </activity>
+        
+        
         
     </application>
 

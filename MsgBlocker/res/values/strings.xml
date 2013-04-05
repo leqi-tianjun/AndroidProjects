@@ -1,48 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="action_settings">settings</string>
-    <string name="hello">Hello World</string>
+
     <string name="app_name">垃圾短信终结者</string>
-    <string name="share">Share</string>
-    <string name="datetimepicker">DatetimePicker</string>
-    <string name="edit_image">EditImage</string>
-    <string name="tab_activity">TabActivity</string>
-    <string name="adview_activity">AdView</string>
-    <string name="camera_activity">Camera</string>
-    <string name="customer_camera_activity">Customer Camera</string>
-    <string name="dragListView_activity">Drag ListView</string>
-    <string name="dragGridView_activity">Drag GridView</string>
-    <string name="googleadmo_activity">Google Admo</string>
-    <string name="popupwindow_activity">Popup Window</string>
-    <string name="part_activity">Part ListView</string>
-    <string name="image_activity">Image Of Internet</string>
-    <string name="alpha_activity">Alpha</string>
-    <string name="applist_activity">Applist</string>
-    <string name="customer_activity">Customer TextView</string>
-    <string name="support_viewpage_activity">Support ViewPager</string>
-    <string name="camera_video">Camera Video</string>
-    <string name="histogram_activity">Histogram</string>
-    <string name="scroll_histogram_activity">Scroll Histogram</string>
-    <string name="sensor_activity">Sensor</string>
-    <string name="flipper_activity">Flipper</string>
-    <string name="mult_download">Multi Download</string>
-    <string name="slide_button">Slide Button</string>
-    <string name="transition_button">Transition Animation</string>
-    <string name="doasync_activity">DoAsync Activity</string>
-    <string name="mark_activity">Mark View</string>
-    <string name="text_activity">Text Animation</string>
-    <string name="weichat_activity">Share WeiChat</string>
-    <string name="fragment_activity">Tab Fragment</string>
-    <string name="page_activity">Tab Page Fragment</string>
-    <string name="flow_activity">Flow Info</string>
-    <string name="contact_activity">Contact Record</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="menu_net_update">联网升级</string>
+    <string name="menu_recommand_friend">推荐好友</string>
+    <string name="menu_submit_proposal">问题反馈</string>
+    <string name="menu_help_information">帮助信息</string>
+    <string name="menu_about">关于</string>
+    <string name="function_msg_block">垃圾短信拦截</string>
+    <string name="function_1">function_1</string>
+    <string name="function_2">function_2</string>
+    <string name="function_3">function_3</string>
+    <string name="function_4">function_4</string>
+    <string name="function_5">function_5</string>
+    <string name="function_6">function_6</string>
+    <string name="function_7">function_7</string>
+    <string name="function_8">function_8</string>
+    <string name="function_9">function_9</string>
     
-    
-    <string name="text1">Go最初是为了解决Google的问题而开发的</string>
-    <string name="text2">要知道Google面临着很多大问题</string>
-    <string name="text3">Google的中服务器最主要是C++编写的</string>
-    <string name="text4">除此之外还有 很多Java、Python代码</string>
-    
-    <string name="title_resource">提示</string>
-    <string name="message_resource">请稍等,正在获取数据...</string>
 </resources>
